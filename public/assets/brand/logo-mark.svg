@@ -1,0 +1,6 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ayl Cafe mark">
+  <circle cx="60" cy="60" r="59" fill="none" stroke="#c7a76b" stroke-width="1"/>
+  <path d="M60 86 L60 54 M60 54 C48 54 42 42 34 36 M60 54 C72 54 78 42 86 36 M44 40 C40 32 40 26 44 20 M76 40 C80 32 80 26 76 20"
+        fill="none" stroke="#c7a76b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="60" cy="86" r="3" fill="#c7a76b"/>
+</svg>

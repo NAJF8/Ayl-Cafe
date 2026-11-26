@@ -1,0 +1,2 @@
+Drop opening-media files here (opening-desktop.mp4, opening-mobile.mp4, opening-desktop.jpg, opening-mobile.jpg)
+and point to them from src/data/settings.ts (openingMedia) to replace the built-in deer-motif opening.
