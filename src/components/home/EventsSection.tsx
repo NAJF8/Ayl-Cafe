@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { events } from "@/data/events";
 import { socialLinks } from "@/data/settings";
@@ -37,43 +38,61 @@ export function EventsSection() {
             )}
           </div>
         ) : (
-        <div className="mt-10 grid gap-5 sm:grid-cols-2">
-          {events.map((event, i) => {
-            const title = pick(event.titleAr, event.titleEn);
-            const description = pick(event.descriptionAr, event.descriptionEn);
-            const badge = pick(event.badgeAr, event.badgeEn);
-            const ctaLabel = pick(event.ctaLabelAr, event.ctaLabelEn);
+          <div className="mt-10 grid gap-5 sm:grid-cols-2">
+            {events.map((event, i) => {
+              const title = pick(event.titleAr, event.titleEn);
+              const description = pick(event.descriptionAr, event.descriptionEn);
+              const badge = pick(event.badgeAr, event.badgeEn);
+              const ctaLabel = pick(event.ctaLabelAr, event.ctaLabelEn);
 
-            return (
-              <motion.div
-                key={event.id}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
-                className="rounded-xl border border-border bg-surface p-6"
-              >
-                {badge && (
-                  <span className="mb-3 inline-block rounded-full bg-primary px-3 py-1 text-xs text-cream">
-                    {badge}
-                  </span>
-                )}
-                <h3 className="font-display text-lg text-text">{title}</h3>
-                {description && <p className="mt-2 text-sm text-text-muted">{description}</p>}
-                {event.ctaHref && ctaLabel && (
-                  <a
-                    href={event.ctaHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
-                  >
-                    {ctaLabel}
-                  </a>
-                )}
-              </motion.div>
-            );
-          })}
-        </div>
+              return (
+                <motion.div
+                  key={event.id}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.5, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
+                  className="overflow-hidden rounded-xl border border-border bg-surface"
+                >
+                  {event.image && (
+                    <div className="relative aspect-[16/9] w-full">
+                      <Image
+                        src={event.image}
+                        alt={title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover"
+                      />
+                      {badge && (
+                        <span className="absolute end-3 top-3 rounded-full bg-primary px-3 py-1 text-xs text-cream">
+                          {badge}
+                        </span>
+                      )}
+                    </div>
+                  )}
+                  <div className="p-6">
+                    {!event.image && badge && (
+                      <span className="mb-3 inline-block rounded-full bg-primary px-3 py-1 text-xs text-cream">
+                        {badge}
+                      </span>
+                    )}
+                    <h3 className="font-display text-lg text-text">{title}</h3>
+                    {description && <p className="mt-2 text-sm text-text-muted">{description}</p>}
+                    {event.ctaHref && ctaLabel && (
+                      <a
+                        href={event.ctaHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+                      >
+                        {ctaLabel}
+                      </a>
+                    )}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
         )}
       </div>
     </section>

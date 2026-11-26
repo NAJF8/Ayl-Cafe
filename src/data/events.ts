@@ -9,6 +9,7 @@ export type Event = {
   ctaLabelAr?: string;
   ctaLabelEn?: string;
   ctaHref?: string;
+  image?: string;
 };
 
 // Real Ayl Cafe campaign, seen in their own promotional footage (@aylcafe.iq) — no exact dates
@@ -26,5 +27,6 @@ export const events: Event[] = [
     ctaLabelAr: "التفاصيل على إنستغرام",
     ctaLabelEn: "Details on Instagram",
     ctaHref: "https://www.instagram.com/aylcafe.iq/",
+    image: "/assets/menu/ayl-winter-card.jpg",
   },
 ];
