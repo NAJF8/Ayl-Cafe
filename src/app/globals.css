@@ -34,6 +34,20 @@
   --radius-lg: 18px;
 }
 
+/* Dark mode — same terracotta accent, dark espresso surfaces instead of cream. */
+:root[data-theme="dark"] {
+  --color-primary: #d4785c;
+  --color-primary-dim: #a85b43;
+  --color-secondary: #7c9270;
+  --color-background: #18140f;
+  --color-surface: #221b14;
+  --color-surface-raised: #2c2318;
+  --color-text: #f2e9da;
+  --color-text-muted: #b6a68f;
+  --color-border: #3a2f23;
+  --color-accent: #e0a37c;
+}
+
 @theme inline {
   --color-primary: var(--color-primary);
   --color-primary-dim: var(--color-primary-dim);
@@ -102,4 +116,51 @@ body {
 }
 .scrollbar-none {
   scrollbar-width: none;
+}
+
+/* Ambient motion backdrop for the menu page — slow drifting color blur, stands in for a real
+   motion/video background until real footage is available (see settings.ts menuBackgroundVideo). */
+.ambient-glow {
+  position: relative;
+  isolation: isolate;
+}
+.ambient-glow::before,
+.ambient-glow::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-radius: 9999px;
+  filter: blur(70px);
+  opacity: 0.28;
+  pointer-events: none;
+}
+.ambient-glow::before {
+  width: 420px;
+  height: 420px;
+  background: var(--color-primary);
+  top: -140px;
+  inset-inline-start: -100px;
+  animation: ayl-drift-a 20s ease-in-out infinite;
+}
+.ambient-glow::after {
+  width: 360px;
+  height: 360px;
+  background: var(--color-secondary);
+  bottom: -160px;
+  inset-inline-end: -80px;
+  animation: ayl-drift-b 24s ease-in-out infinite;
+}
+@keyframes ayl-drift-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(50px, 30px) scale(1.08); }
+}
+@keyframes ayl-drift-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-40px, -35px) scale(1.05); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ambient-glow::before,
+  .ambient-glow::after {
+    animation: none;
+  }
 }

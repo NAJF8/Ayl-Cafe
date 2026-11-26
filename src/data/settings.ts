@@ -17,6 +17,17 @@ export const openingMedia: OpeningMedia = {
   // mobileImage: "/assets/hero/opening-mobile.jpg",
 };
 
+export type MenuBackgroundMedia = {
+  video?: string;
+  posterImage?: string;
+};
+
+export const menuBackgroundMedia: MenuBackgroundMedia = {
+  // Leave empty to use the built-in ambient animated backdrop.
+  // video: "/assets/hero/menu-bg.mp4",
+  // posterImage: "/assets/hero/menu-bg.jpg",
+};
+
 export const socialLinks = {
   instagram: "https://www.instagram.com/aylcafe.iq/",
   website: "https://aylcafe.iq",

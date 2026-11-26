@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Amiri, Tajawal, Fraunces, Inter } from "next/font/google";
 import { brand } from "@/data/brand";
 import { CartProvider } from "@/lib/cart-context";
+import { ThemeProvider } from "@/lib/theme-context";
+import { LanguageProvider } from "@/lib/language-context";
 import { CartDrawerProvider } from "@/components/menu/CartDrawerContext";
 import { CartDrawer } from "@/components/menu/CartDrawer";
 import "./globals.css";
@@ -41,12 +43,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ar" dir="rtl" className={`${amiri.variable} ${tajawal.variable} ${fraunces.variable} ${inter.variable}`}>
       <body className="min-h-screen bg-background text-text antialiased">
-        <CartDrawerProvider>
-          <CartProvider>
-            {children}
-            <CartDrawer />
-          </CartProvider>
-        </CartDrawerProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            <CartDrawerProvider>
+              <CartProvider>
+                {children}
+                <CartDrawer />
+              </CartProvider>
+            </CartDrawerProvider>
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

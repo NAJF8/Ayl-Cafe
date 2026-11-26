@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { brand } from "@/data/brand";
+import { useLanguage } from "@/lib/language-context";
 
 const beats = [
   { labelAr: "أيل", labelEn: "Ayl" },
@@ -11,6 +12,8 @@ const beats = [
 ];
 
 export function BrandStory() {
+  const { pick } = useLanguage();
+
   return (
     <section id="about" className="mx-auto max-w-3xl px-5 py-24 text-center">
       <motion.p
@@ -20,7 +23,7 @@ export function BrandStory() {
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className="text-lg leading-relaxed text-text-muted"
       >
-        {brand.descriptionAr}
+        {pick(brand.descriptionAr, brand.descriptionEn)}
       </motion.p>
 
       <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
@@ -33,7 +36,7 @@ export function BrandStory() {
             transition={{ duration: 0.5, delay: i * 0.08 }}
             className="font-display text-sm uppercase tracking-[0.25em] text-primary"
           >
-            {beat.labelAr}
+            {pick(beat.labelAr, beat.labelEn)}
           </motion.span>
         ))}
       </div>

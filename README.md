@@ -1,7 +1,8 @@
 # Ayl Cafe — أيل كافيه
 
-Premium digital menu for Ayl Cafe: cinematic opening experience, interactive scroll-driven
-homepage, and a mobile-first bilingual (Arabic RTL / English) menu with WhatsApp ordering.
+Premium digital menu for Ayl Cafe: cinematic opening experience, a photo hero matching the
+cafe's real site, a mobile-first bilingual (Arabic RTL / English) menu with light/dark themes
+and WhatsApp ordering.
 
 Built with Next.js 16 (App Router), TypeScript, Tailwind CSS v4, and Framer Motion.
 
@@ -25,14 +26,27 @@ src/
     layout/            NavBar, Footer
     home/              Hero, BrandStory, LocationSection
     menu/              CategoryNav, ProductCard, ProductGrid, ProductDetailDrawer,
-                        CartDrawer, CartButton, CartDrawerContext
+                        CartDrawer, CartButton, CartDrawerContext, MenuEntryTransition
   data/                brand.ts, categories.ts, products.ts, settings.ts — all editable content
-  lib/                 cart-context.tsx, whatsapp.ts, format.ts
+  lib/                 cart-context.tsx, whatsapp.ts, format.ts, theme-context.tsx,
+                       language-context.tsx
 public/assets/
   brand/               real Ayl Cafe logo mark + wordmark (from aylcafe.iq)
   menu/                generic cup/glass placeholders — swap for real product photos
-  hero/                drop opening video/image files here
+  hero/                real Ayl Cafe background photo (home-bg.jpg, from aylcafe.iq);
+                       drop opening/menu video files here too
 ```
+
+## Theme and language
+
+- **Light/dark mode** — `ThemeToggle` in the nav flips a `data-theme` attribute on `<html>`;
+  every color is a CSS variable, so no component needs theme-specific classes. Dark palette is
+  defined in `globals.css` under `:root[data-theme="dark"]`.
+- **Arabic/English** — `LanguageToggle` in the nav switches `useLanguage()`'s `lang` and updates
+  `<html lang/dir>` live. Every piece of bilingual content already has `...Ar`/`...En` fields in
+  `src/data/*`; components call `pick(ar, en)` to render the active language. Default is Arabic.
+- Both choices persist in `localStorage` and are also picked up from `prefers-color-scheme` on
+  first visit for the theme.
 
 ## Current status
 
