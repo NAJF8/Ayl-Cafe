@@ -23,11 +23,12 @@ export type HeroMedia = {
 };
 
 export const heroMedia: HeroMedia = {
-  // Drop a short muted loop (coffee pour, bar shot, etc.) in /assets/hero/ and set it here to
-  // replace the static storefront photo with a video background. Falls back to the photo
-  // (storefront-night.jpg, used as `poster`) when empty.
-  // video: "/assets/hero/hero-loop.mp4",
-  poster: "/assets/hero/storefront-night.jpg",
+  // Real Ayl Cafe footage (trimmed from the client-supplied video.mp4): storefront at night,
+  // a cinematic pour-over shot, then the illuminated entrance — a clean, brand-only ~4s loop.
+  // The raw upload also had a seasonal winter-campaign segment featuring staff and a child;
+  // that part was left out of the loop rather than looping a promo clip with people year-round.
+  video: "/assets/hero/hero-loop.mp4",
+  poster: "/assets/hero/video-poster.jpg",
 };
 
 export type MenuBackgroundMedia = {

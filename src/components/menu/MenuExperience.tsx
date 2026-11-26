@@ -8,6 +8,7 @@ import { ProductGrid } from "@/components/menu/ProductGrid";
 import { ProductDetailDrawer } from "@/components/menu/ProductDetailDrawer";
 import { MenuEntryTransition } from "@/components/menu/MenuEntryTransition";
 import { RateOrderButton } from "@/components/feedback/RateOrderButton";
+import { ChatWidget } from "@/components/chat/ChatWidget";
 import { categories } from "@/data/categories";
 import type { Product } from "@/data/products";
 import { useLanguage } from "@/lib/language-context";
@@ -38,6 +39,7 @@ export function MenuExperience() {
 
       <ProductDetailDrawer product={selectedProduct} onClose={() => setSelectedProduct(null)} />
       <RateOrderButton />
+      <ChatWidget />
     </>
   );
 }
