@@ -84,7 +84,9 @@ export function ProductDetailDrawer({ product, onClose }: ProductDetailDrawerPro
             </div>
 
             <h2 className="font-display mt-5 text-2xl text-text">{product.nameAr}</h2>
-            <p className="mt-2 text-sm text-text-muted">{product.descriptionAr}</p>
+            {product.descriptionAr && (
+              <p className="mt-2 text-sm text-text-muted">{product.descriptionAr}</p>
+            )}
             <p className="mt-3 text-lg font-medium text-primary">{formatPrice(unitPrice)}</p>
 
             {(product.optionGroups ?? []).map((group) => (

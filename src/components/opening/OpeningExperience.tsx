@@ -52,7 +52,7 @@ export function OpeningExperience() {
     <AnimatePresence>
       {visible && (
         <motion.div
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background text-text"
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-ink text-cream"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -69,7 +69,7 @@ export function OpeningExperience() {
                   playsInline
                 />
               )}
-              <div className="absolute inset-0 bg-background/60" />
+              <div className="absolute inset-0 bg-ink/60" />
             </>
           ) : (
             <motion.div
@@ -93,7 +93,7 @@ export function OpeningExperience() {
                 <p className="font-display text-3xl tracking-wide text-primary md:text-4xl">
                   {brand.shortNameAr}
                 </p>
-                <p className="mt-1 text-sm text-text-muted">{brand.nameAr}</p>
+                <p className="mt-1 text-sm text-cream/70">{brand.nameAr}</p>
               </motion.div>
             )}
           </AnimatePresence>
@@ -101,7 +101,7 @@ export function OpeningExperience() {
           <button
             type="button"
             onClick={finish}
-            className="absolute bottom-8 end-8 text-xs uppercase tracking-widest text-text-muted transition-colors hover:text-text focus-visible:outline-2 focus-visible:outline-primary"
+            className="absolute bottom-8 end-8 text-xs uppercase tracking-widest text-cream/60 transition-colors hover:text-cream focus-visible:outline-2 focus-visible:outline-primary"
           >
             تخطي · Skip
           </button>

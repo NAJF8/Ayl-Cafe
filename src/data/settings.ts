@@ -18,15 +18,18 @@ export const openingMedia: OpeningMedia = {
 };
 
 export const socialLinks = {
-  instagram: "", // e.g. "https://instagram.com/aylcafe" — fill in once confirmed
-  whatsapp: "", // e.g. "9647xxxxxxxxx" (no plus, no spaces)
+  instagram: "https://www.instagram.com/aylcafe.iq/",
+  website: "https://aylcafe.iq",
+  // The cafe's public contact number on Instagram is 0781 112 2849 (+9647811122849).
+  // Not set here yet — confirm it's the right number for WhatsApp orders before enabling.
+  whatsapp: "",
 } as const;
 
 export const location = {
   cityAr: "النجف",
   cityEn: "Najaf",
-  addressAr: "", // fill in once confirmed — do not invent an address
-  addressEn: "",
-  mapsUrl: "", // Google Maps share link
-  hours: [] as { dayAr: string; dayEn: string; open: string; close: string }[],
+  addressAr: "حي الأمير، النجف الأشرف، العراق",
+  addressEn: "Al-Amir, Najaf Al-Ashraf, Iraq",
+  mapsUrl: "", // Google Maps share link — not published by the cafe yet, don't invent one
+  hours: [{ dayAr: "يوميًا", dayEn: "Daily", open: "7:00 ص", close: "2:00 ص" }],
 } as const;

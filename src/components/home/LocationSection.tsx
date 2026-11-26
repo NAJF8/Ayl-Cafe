@@ -13,6 +13,16 @@ export function LocationSection() {
           <p className="mt-4 text-text-muted/70">تفاصيل العنوان قريبًا</p>
         )}
 
+        {location.hours.length > 0 && (
+          <ul className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-sm text-text-muted">
+            {location.hours.map((slot) => (
+              <li key={slot.dayAr}>
+                {slot.dayAr}: {slot.open} – {slot.close}
+              </li>
+            ))}
+          </ul>
+        )}
+
         {location.mapsUrl && (
           <a
             href={location.mapsUrl}

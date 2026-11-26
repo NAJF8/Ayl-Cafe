@@ -1,0 +1,6 @@
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cold drink placeholder">
+  <rect width="300" height="300" fill="#f2e4cd"/>
+  <path d="M105 95 H195 L185 210 C184 218 176 224 150 224 C124 224 116 218 115 210 Z" fill="#f7eedd" stroke="#bd6248" stroke-width="1.5"/>
+  <rect x="112" y="140" width="76" height="40" fill="#ead8b9" opacity="0.8"/>
+  <line x1="150" y1="90" x2="150" y2="50" stroke="#bd6248" stroke-width="2" stroke-linecap="round"/>
+</svg>

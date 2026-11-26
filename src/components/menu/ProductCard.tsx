@@ -33,7 +33,9 @@ export function ProductCard({ product, onSelect }: ProductCardProps) {
       </div>
       <div className="flex flex-1 flex-col gap-1 p-4">
         <h3 className="font-display text-base text-text">{product.nameAr}</h3>
-        <p className="line-clamp-2 text-sm text-text-muted">{product.descriptionAr}</p>
+        {product.descriptionAr && (
+          <p className="line-clamp-2 text-sm text-text-muted">{product.descriptionAr}</p>
+        )}
         <p className="mt-auto pt-2 text-sm font-medium text-primary">{formatPrice(product.price)}</p>
       </div>
     </motion.button>

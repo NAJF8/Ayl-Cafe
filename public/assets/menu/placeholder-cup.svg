@@ -1,7 +1,7 @@
 <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Coffee cup placeholder">
-  <rect width="300" height="300" fill="#16140f"/>
-  <ellipse cx="150" cy="200" rx="70" ry="14" fill="#2a2620"/>
-  <path d="M95 110 L205 110 L195 195 C193 210 180 218 150 218 C120 218 107 210 105 195 Z" fill="#1f1c15" stroke="#c7a76b" stroke-width="1.5"/>
-  <path d="M205 125 C230 122 240 140 232 158 C226 170 212 173 203 168" fill="none" stroke="#c7a76b" stroke-width="1.5"/>
-  <ellipse cx="150" cy="112" rx="55" ry="8" fill="#30392c"/>
+  <rect width="300" height="300" fill="#f2e4cd"/>
+  <ellipse cx="150" cy="200" rx="70" ry="14" fill="#ead8b9"/>
+  <path d="M95 110 L205 110 L195 195 C193 210 180 218 150 218 C120 218 107 210 105 195 Z" fill="#f7eedd" stroke="#bd6248" stroke-width="1.5"/>
+  <path d="M205 125 C230 122 240 140 232 158 C226 170 212 173 203 168" fill="none" stroke="#bd6248" stroke-width="1.5"/>
+  <ellipse cx="150" cy="112" rx="55" ry="8" fill="#5c3a26" opacity="0.85"/>
 </svg>

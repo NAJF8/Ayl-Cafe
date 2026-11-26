@@ -2,17 +2,21 @@
 
 :root {
   /* === Ayl Cafe design tokens === */
-  /* Placeholder premium palette — swap for the real Ayl Cafe identity in src/data/brand.ts + here. */
-  --color-primary: #c7a76b;      /* brass / gold accent */
-  --color-primary-dim: #8c7342;
-  --color-secondary: #30392c;    /* deep forest, grounding accent */
-  --color-background: #0b0a09;   /* near-black, atmospheric */
-  --color-surface: #16140f;
-  --color-surface-raised: #1f1c15;
-  --color-text: #f2ecdd;         /* warm cream */
-  --color-text-muted: #a89d87;
-  --color-border: #2a2620;
-  --color-accent: #b5542f;       /* roasted copper, used sparingly */
+  /* Sourced from the real Ayl Cafe identity (aylcafe.iq logo + e-menu): terracotta mark on warm cream. */
+  --color-primary: #bd6248;      /* terracotta — the Ayl antler mark */
+  --color-primary-dim: #8f4835;
+  --color-secondary: #4b5d43;    /* deep olive, used sparingly as a grounding accent */
+  --color-background: #faf3e6;   /* warm cream, matches the printed menu */
+  --color-surface: #f2e4cd;
+  --color-surface-raised: #ead8b9;
+  --color-text: #2a2017;         /* dark espresso */
+  --color-text-muted: #7a6a56;
+  --color-border: #e1cfb0;
+  --color-accent: #5c3a26;       /* roast brown, used sparingly */
+
+  /* Dedicated dark backdrop for the cinematic opening only — the rest of the site is light. */
+  --color-ink: #0b0a09;
+  --color-cream: #f2ecdd;
 
   --font-display-ar: var(--font-amiri);
   --font-body-ar: var(--font-tajawal);
@@ -41,6 +45,8 @@
   --color-text-muted: var(--color-text-muted);
   --color-border: var(--color-border);
   --color-accent: var(--color-accent);
+  --color-ink: var(--color-ink);
+  --color-cream: var(--color-cream);
 
   --font-display-ar: var(--font-display-ar);
   --font-body-ar: var(--font-body-ar);
