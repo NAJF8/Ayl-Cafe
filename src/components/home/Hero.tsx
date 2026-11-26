@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { DeerMotif } from "@/components/motion/DeerMotif";
 import { brand } from "@/data/brand";
-import { socialLinks } from "@/data/settings";
+import { socialLinks, heroMedia } from "@/data/settings";
 import { useLanguage } from "@/lib/language-context";
 
 export function Hero() {
@@ -14,15 +14,28 @@ export function Hero() {
   return (
     <section className="relative flex min-h-[92vh] flex-col items-center justify-center overflow-hidden px-5 text-center">
       {/* A real photo of the Ayl Cafe storefront at night (from @aylcafe.iq) — the hero is
-          intentionally always dark/cinematic here, independent of the site's light/dark toggle. */}
-      <Image
-        src="/assets/hero/storefront-night.jpg"
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="-z-20 object-cover"
-      />
+          intentionally always dark/cinematic here, independent of the site's light/dark toggle.
+          Drop a video in heroMedia.video (settings.ts) to use a motion background instead. */}
+      {heroMedia.video ? (
+        <video
+          className="absolute inset-0 -z-20 h-full w-full object-cover"
+          src={heroMedia.video}
+          poster={heroMedia.poster}
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+      ) : (
+        <Image
+          src={heroMedia.poster ?? "/assets/hero/storefront-night.jpg"}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="-z-20 object-cover"
+        />
+      )}
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/75 to-ink/55" />
 
       <motion.div

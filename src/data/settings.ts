@@ -17,6 +17,19 @@ export const openingMedia: OpeningMedia = {
   // mobileImage: "/assets/hero/opening-mobile.jpg",
 };
 
+export type HeroMedia = {
+  video?: string;
+  poster?: string;
+};
+
+export const heroMedia: HeroMedia = {
+  // Drop a short muted loop (coffee pour, bar shot, etc.) in /assets/hero/ and set it here to
+  // replace the static storefront photo with a video background. Falls back to the photo
+  // (storefront-night.jpg, used as `poster`) when empty.
+  // video: "/assets/hero/hero-loop.mp4",
+  poster: "/assets/hero/storefront-night.jpg",
+};
+
 export type MenuBackgroundMedia = {
   video?: string;
   posterImage?: string;
