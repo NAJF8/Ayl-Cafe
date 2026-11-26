@@ -29,10 +29,23 @@ src/
   data/                brand.ts, categories.ts, products.ts, settings.ts — all editable content
   lib/                 cart-context.tsx, whatsapp.ts, format.ts
 public/assets/
-  brand/               logo mark + wordmark (SVG placeholders)
-  menu/                product photo placeholders
+  brand/               real Ayl Cafe logo mark + wordmark (from aylcafe.iq)
+  menu/                generic cup/glass placeholders — swap for real product photos
   hero/                drop opening video/image files here
 ```
+
+## Current status
+
+- **Brand identity, logo, colors, tagline, address, hours**: real, pulled from aylcafe.iq and
+  @aylcafe.iq on 2026-11-26.
+- **Menu (7 categories, 50 items, prices)**: real, transcribed from the official e-menu PDF
+  (aylcafe.iq/ar/e-menu). No items or prices are invented.
+- **Product photos**: still generic SVG placeholders — no real product photography was provided.
+- **WhatsApp ordering number**: not set. The cafe's public contact number on Instagram
+  (0781 112 2849) was found but not assumed to be the right number for order messages — confirm
+  it and set `socialLinks.whatsapp` in `src/data/settings.ts` to enable the WhatsApp checkout
+  button.
+- **Google Maps link**: not set — none was published by the cafe; don't invent one.
 
 ## Updating brand identity and content (no code changes needed)
 
