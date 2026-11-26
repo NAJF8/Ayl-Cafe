@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { DeerMotif } from "@/components/motion/DeerMotif";
 import { brand } from "@/data/brand";
@@ -12,11 +13,17 @@ export function Hero() {
 
   return (
     <section className="relative flex min-h-[92vh] flex-col items-center justify-center overflow-hidden px-5 text-center">
-      <div
-        className="absolute inset-0 -z-20 bg-cover bg-center"
-        style={{ backgroundImage: "url(/assets/hero/home-bg.jpg)" }}
+      {/* A real photo of the Ayl Cafe storefront at night (from @aylcafe.iq) — the hero is
+          intentionally always dark/cinematic here, independent of the site's light/dark toggle. */}
+      <Image
+        src="/assets/hero/storefront-night.jpg"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="-z-20 object-cover"
       />
-      <div className="absolute inset-0 -z-10 bg-background/88 backdrop-blur-[1px]" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/75 to-ink/55" />
 
       <motion.div
         className="h-28 w-28 text-primary md:h-40 md:w-40"
@@ -31,7 +38,7 @@ export function Hero() {
         initial={{ opacity: 0, y: 14 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-        className="mt-6 text-xs uppercase tracking-[0.3em] text-text-muted"
+        className="mt-6 text-xs uppercase tracking-[0.3em] text-cream/60"
       >
         {brand.shortNameEn}
       </motion.p>
@@ -40,7 +47,7 @@ export function Hero() {
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-        className="font-display mt-4 text-5xl text-text md:text-7xl"
+        className="font-display mt-4 text-5xl text-cream md:text-7xl"
       >
         {pick(brand.nameAr, brand.nameEn)}
       </motion.h1>
@@ -49,7 +56,7 @@ export function Hero() {
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-        className="mt-4 max-w-md text-base text-text-muted"
+        className="mt-4 max-w-md text-base text-cream/70"
       >
         {pick(brand.taglineAr, brand.taglineEn)}
       </motion.p>
@@ -71,7 +78,7 @@ export function Hero() {
             href={socialLinks.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-primary px-8 py-3 text-sm uppercase tracking-widest text-primary transition-colors hover:bg-primary hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            className="inline-flex items-center gap-2 rounded-full border border-cream/50 px-8 py-3 text-sm uppercase tracking-widest text-cream transition-colors hover:border-cream hover:bg-cream/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
             {pick("اتصل بنا", "Contact Us")}
           </a>

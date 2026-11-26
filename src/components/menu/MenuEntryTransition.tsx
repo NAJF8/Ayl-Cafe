@@ -5,34 +5,23 @@ import { AnimatePresence, motion } from "framer-motion";
 import { DeerMotif } from "@/components/motion/DeerMotif";
 import { brand } from "@/data/brand";
 
-const SESSION_KEY = "ayl-menu-entry-seen";
-
-function computeShouldShow() {
-  if (typeof window === "undefined") return false;
+function prefersReducedMotion() {
+  if (typeof window === "undefined") return true;
   try {
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const alreadySeen = window.sessionStorage.getItem(SESSION_KEY);
-    return !reduced && !alreadySeen;
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   } catch {
-    return false;
+    return true;
   }
 }
 
-/** A brief Ayl motif flash shown the first time the menu is opened each session. */
+/** A brief Ayl motif flash shown every time the menu page mounts. */
 export function MenuEntryTransition() {
   const [visible, setVisible] = useState(false);
-  // Lazy-initialized once and never recomputed, so it stays stable across React's
-  // development-mode double effect invocation below.
-  const [shouldShow] = useState(computeShouldShow);
+  const [shouldShow] = useState(() => !prefersReducedMotion());
 
   useEffect(() => {
     if (!shouldShow) return;
-    try {
-      window.sessionStorage.setItem(SESSION_KEY, "1");
-    } catch {
-      // ignore
-    }
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time per-session reveal, decided above
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- plays once per mount of this route, decided above
     setVisible(true);
     const t = setTimeout(() => setVisible(false), 900);
     return () => clearTimeout(t);
