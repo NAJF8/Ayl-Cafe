@@ -2,12 +2,11 @@
 
 import { motion } from "framer-motion";
 import { events } from "@/data/events";
+import { socialLinks } from "@/data/settings";
 import { useLanguage } from "@/lib/language-context";
 
 export function EventsSection() {
   const { pick } = useLanguage();
-
-  if (events.length === 0) return null;
 
   return (
     <section className="border-t border-border px-5 py-20">
@@ -21,6 +20,23 @@ export function EventsSection() {
           </h2>
         </div>
 
+        {events.length === 0 ? (
+          <div className="mt-10 rounded-xl border border-border bg-surface p-8 text-center">
+            <p className="text-text-muted">
+              {pick("ما عدنا فعاليات معلنة حاليًا — تابعونا أول بأول.", "No events announced right now — follow along for updates.")}
+            </p>
+            {socialLinks.instagram && (
+              <a
+                href={socialLinks.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+              >
+                {pick("إنستغرام أيل", "Ayl's Instagram")}
+              </a>
+            )}
+          </div>
+        ) : (
         <div className="mt-10 grid gap-5 sm:grid-cols-2">
           {events.map((event, i) => {
             const title = pick(event.titleAr, event.titleEn);
@@ -58,6 +74,7 @@ export function EventsSection() {
             );
           })}
         </div>
+        )}
       </div>
     </section>
   );

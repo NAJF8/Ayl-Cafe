@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { products, type Product } from "@/data/products";
+import { ALL_CATEGORY_ID } from "@/data/categories";
 import { ProductCard } from "@/components/menu/ProductCard";
 import { useLanguage } from "@/lib/language-context";
 
@@ -22,7 +23,7 @@ const item = {
 
 export function ProductGrid({ categoryId, onSelect }: ProductGridProps) {
   const { pick } = useLanguage();
-  const items = products.filter((p) => p.categoryId === categoryId);
+  const items = categoryId === ALL_CATEGORY_ID ? products : products.filter((p) => p.categoryId === categoryId);
 
   if (items.length === 0) {
     return (
