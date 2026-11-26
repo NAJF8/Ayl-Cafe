@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import clsx from "clsx";
 import type { Product } from "@/data/products";
@@ -84,8 +85,8 @@ export function ProductDetailDrawer({ product, onClose }: ProductDetailDrawerPro
               ✕
             </button>
 
-            <div className="aspect-[4/3] overflow-hidden rounded-lg bg-surface-raised">
-              <img src={product.image} alt={name} className="h-full w-full object-cover" />
+            <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-surface-raised">
+              <Image src={product.image} alt={name} fill sizes="(max-width: 640px) 100vw, 420px" className="object-cover" />
             </div>
 
             <h2 className="font-display mt-5 text-2xl text-text" dir={lang === "ar" ? "rtl" : "ltr"}>

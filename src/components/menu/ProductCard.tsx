@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import type { Product } from "@/data/products";
 import { formatPrice } from "@/lib/format";
@@ -37,20 +38,22 @@ export function ProductCard({ product, onSelect }: ProductCardProps) {
       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
       className="group flex flex-col overflow-hidden rounded-xl border border-border bg-surface shadow-sm transition-shadow hover:border-primary/60 hover:shadow-lg"
     >
-      {/* No overflow-hidden here — lets the quick-add button hang below the image edge. */}
+      {/* No overflow-hidden on the outer wrapper — lets the quick-add button hang below the image edge. */}
       <div className="relative">
         <div
           role="button"
           tabIndex={0}
           onClick={() => onSelect(product)}
           onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && onSelect(product)}
-          className="aspect-square overflow-hidden bg-surface-raised"
+          className="relative aspect-square overflow-hidden bg-surface-raised"
         >
-          <img
+          <Image
             src={product.image}
             alt={name}
+            fill
             loading="lazy"
-            className="h-full w-full object-cover transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
+            sizes="(max-width: 768px) 50vw, 25vw"
+            className="object-cover transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
           />
           {badge && (
             <span className="absolute end-2 top-2 rounded-full bg-primary px-2.5 py-1 text-[11px] text-cream">

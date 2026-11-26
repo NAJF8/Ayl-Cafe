@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useCart } from "@/lib/cart-context";
 import { useCartDrawer } from "@/components/menu/CartDrawerContext";
@@ -61,7 +62,13 @@ export function CartDrawer() {
                   const name = pick(details.product.nameAr, details.product.nameEn);
                   return (
                     <div key={line.lineId} className="flex gap-3 border-b border-border pb-4">
-                      <img src={details.product.image} alt={name} className="h-16 w-16 rounded-lg object-cover" />
+                      <Image
+                        src={details.product.image}
+                        alt={name}
+                        width={64}
+                        height={64}
+                        className="h-16 w-16 rounded-lg object-cover"
+                      />
                       <div className="flex-1">
                         <p className="text-sm font-medium text-text">{name}</p>
                         <p className="mt-1 text-xs text-text-muted">
