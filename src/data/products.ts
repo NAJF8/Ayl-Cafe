@@ -26,11 +26,11 @@ export type Product = {
   optionGroups?: ProductOptionGroup[];
 };
 
-// Real Ayl Cafe photography (from @aylcafe.iq), used as category-representative images since no
-// individual per-item product photography exists yet. Not a 1:1 photo per drink — see README.
-const PHOTO_HOT_COFFEE = "/assets/menu/pour-over.jpg"; // pour-over coffee, real Ayl shot
-const PHOTO_SPECIALTY = "/assets/menu/roastery-beans.jpg"; // espresso grinder + beans, real Ayl shot
-const PHOTO_COLD = "/assets/menu/iced-signature.jpg"; // iced drink in a branded Ayl cup, real shot
+// Category-representative images since no individual per-item product photography exists yet —
+// not a 1:1 photo per drink. See README for sourcing details.
+const PHOTO_HOT_COFFEE = "/assets/menu/pour-over.jpg"; // real Ayl Cafe shot (from @aylcafe.iq)
+const PHOTO_SPECIALTY = "/assets/menu/roastery-beans.jpg"; // free-license stock photo (Pexels), client-requested swap
+const PHOTO_COLD = "/assets/menu/iced-signature.jpg"; // real Ayl Cafe shot (from @aylcafe.iq)
 
 const hotColdOption: ProductOptionGroup = {
   id: "temperature",

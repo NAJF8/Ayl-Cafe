@@ -23,10 +23,10 @@ export type HeroMedia = {
 };
 
 export const heroMedia: HeroMedia = {
-  // Real Ayl Cafe footage (trimmed from the client-supplied video.mp4): storefront at night,
-  // a cinematic pour-over shot, then the illuminated entrance — a clean, brand-only ~4s loop.
-  // The raw upload also had a seasonal winter-campaign segment featuring staff and a child;
-  // that part was left out of the loop rather than looping a promo clip with people year-round.
+  // Real Ayl Cafe footage (trimmed from the client-supplied video.mp4): storefront at night
+  // into the illuminated entrance — a clean, people-free, brand-only ~4s loop. The raw upload
+  // is a longer seasonal winter-campaign reel that also features staff and a child; that part
+  // was left out of the loop rather than looping a promo clip with people year-round.
   video: "/assets/hero/hero-loop.mp4",
   poster: "/assets/hero/video-poster.jpg",
 };
@@ -37,9 +37,11 @@ export type MenuBackgroundMedia = {
 };
 
 export const menuBackgroundMedia: MenuBackgroundMedia = {
-  // Leave empty to use the built-in ambient animated backdrop.
-  // video: "/assets/hero/menu-bg.mp4",
-  // posterImage: "/assets/hero/menu-bg.jpg",
+  // A face-free crop of the same client video: just the hands, kettle and pour-over dripper
+  // from its cinematic coffee-brewing shot (the full frame also shows the barista's face, so
+  // only the coffee-only third of that composition is used here).
+  video: "/assets/hero/menu-bg.mp4",
+  posterImage: "/assets/hero/menu-bg-poster.jpg",
 };
 
 export const socialLinks = {
