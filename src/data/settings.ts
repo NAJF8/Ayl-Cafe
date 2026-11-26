@@ -20,9 +20,8 @@ export const openingMedia: OpeningMedia = {
 export const socialLinks = {
   instagram: "https://www.instagram.com/aylcafe.iq/",
   website: "https://aylcafe.iq",
-  // The cafe's public contact number on Instagram is 0781 112 2849 (+9647811122849).
-  // Not set here yet — confirm it's the right number for WhatsApp orders before enabling.
-  whatsapp: "",
+  // The cafe's public contact number on Instagram (0781 112 2849).
+  whatsapp: "9647811122849",
 } as const;
 
 export const location = {
